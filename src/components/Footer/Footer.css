@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+}
+.footer__text {
+  margin: 0 0 24px 40px;
+}
+.footer__date {
+  margin: 0 42px 24px auto;
+}

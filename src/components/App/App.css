@@ -1,0 +1,19 @@
+.page {
+  background-color: #f3f3f3;
+  font-family: Cabinet Grotesk Medium, Arial, Helvetica, sans-serif;
+  color: #212121;
+  font-weight: normal;
+}
+
+.page {
+  background-color: #f3f3f3;
+  font-family: Cabinet Grotesk Bold, Arial, Helvetica, sans-serif;
+  color: #212121;
+  font-weight: normal;
+}
+
+.page__content {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
