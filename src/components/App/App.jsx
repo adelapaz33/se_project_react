@@ -44,6 +44,7 @@ function App() {
       </div>
       <ModalWithForm
         title="New Garment"
+        isOpen={activeModal === "add-garment"}
         buttonText="Add Garment"
         activeModal={activeModal}
         handleCloseClick={closeActiveModal}
@@ -71,21 +72,36 @@ function App() {
         <fieldset className="modal__radio">
           <legend className="modal__legend">Select the weather type:</legend>
           <label htmlFor="hot" className="modal__label modal__label_type_radio">
-            <input type="radio" className="modal__radio-input" id="hot" />
+            <input
+              type="radio"
+              className="modal__radio-input"
+              id="hot"
+              name="weather"
+            />
             Hot
           </label>
           <label
             htmlFor="warm"
             className="modal__label modal__label_type_radio"
           >
-            <input type="radio" className="modal__radio-input" id="warm" />
+            <input
+              type="radio"
+              className="modal__radio-input"
+              id="warm"
+              name="weather"
+            />
             Warm
           </label>
           <label
             htmlFor="cold"
             className="modal__label modal__label_type_radio"
           >
-            <input type="radio" className="modal__radio-input" id="cold" />
+            <input
+              type="radio"
+              className="modal__radio-input"
+              id="cold"
+              name="weather"
+            />
             Cold
           </label>
         </fieldset>
