@@ -6,6 +6,10 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 ## Links
 
+<<<<<<< HEAD
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 
 find the link: https://adelapaz33.github.io/se_project_react/
+=======
+- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+>>>>>>> c74ef1e7f7e9953d12d021bfdb0766697175ff99
