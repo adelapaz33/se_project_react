@@ -17,14 +17,12 @@
 .modal__content {
   background-color: white;
   position: relative;
-  padding: 28px 28px 36px;
+  /* padding: 28px 28px 36px; */
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
   margin: auto;
   border-radius: 20px;
-
-  /* overflow-y: auto; */
 }
 .modal__form {
   display: flex;
