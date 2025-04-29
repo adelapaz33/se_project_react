@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
-import { getItems, deleteItem } from "../../utils/api";
+import { getItems, postItem, deleteItem } from "../../utils/api";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
 function App() {
@@ -71,11 +71,18 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log('API Response:', data);
         setClothingItems(data);
       })
       .catch(console.error);
   }, []);
+  useEffect(() => {
+    postItem()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch(console.error);
+  }, []);
+  
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
