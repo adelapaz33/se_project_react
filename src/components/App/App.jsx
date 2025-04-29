@@ -40,9 +40,15 @@ function App() {
     setSelectedCard(card);
   };
   const handleCardDelete = () => {
-    deleteItem(selectedCard._id).then(()=>{
-      setClothingItems((cards) => )
-    });
+    console.log("Selected card:", selectedCard);
+    deleteItem(selectedCard._id)
+      .then(() => {
+        setClothingItems((cards) =>
+          cards.filter((card) => card._id !== selectedCard._id)
+        );
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -65,7 +71,8 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        setClothingItems;
+        console.log('API Response:', data);
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
@@ -106,10 +113,9 @@ function App() {
           openConfirmationModal={openConfirmationModal}
         />
         <DeleteConfirmationModal
-          // does this go inside ItemModal??
           isOpen={activeModal === "delete-confirmation"}
           handleCloseClick={closeActiveModal}
-          // handleCardDelete={handleDeleteItem}
+          handleCardDelete={handleCardDelete}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

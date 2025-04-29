@@ -1,20 +1,52 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+}
 .modal_opened {
   visibility: visible;
   opacity: 1;
 }
-.modal__confirmation {
+.modal-confirmation {
+  position: relative;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   font-size: 20px;
   line-height: 24px;
+  width: 100%;
+  max-width: 670px;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
 }
-.modal__cancel-btn {
+.modal-confirmation__text {
+  margin: 60px 0 0 0;
+  text-align: center;
+}
+.modal-confirmation__cancel-btn {
   border: none;
   background-color: transparent;
   color: black;
+  margin-bottom: 60px;
+  margin-top: 24px;
+  cursor: pointer;
 }
-.modal__delete-btn {
+.modal-confirmation__delete-btn {
   border: none;
   background-color: transparent;
   color: #ff4d00;
+  margin-top: 40px;
+  cursor: pointer;
 }

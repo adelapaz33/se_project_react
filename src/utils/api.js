@@ -14,7 +14,9 @@ function getItems() {
 function deleteItem(id) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-    headers: {"Content-Type: application/json"},
+    headers: {
+      "Content-Type": "application/json",
+    },
   }).then(checkResponse);
 }
 export { getItems, deleteItem };
