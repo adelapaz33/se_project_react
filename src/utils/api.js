@@ -17,6 +17,11 @@ function postItem() {
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      name,
+      imageUrl,
+      weather,
+    }),
   }).then(checkResponse);
 }
 

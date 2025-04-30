@@ -55,10 +55,11 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleAddItemModalSubmit = ({ name, image, weather }) => {
-    setClothingItems([{ name, image, weather }, ...clothingItems]);
+  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
+    setClothingItems([{ name, imageUrl, weather }, ...clothingItems]);
     closeActiveModal();
   };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -75,14 +76,7 @@ function App() {
       })
       .catch(console.error);
   }, []);
-  useEffect(() => {
-    postItem()
-      .then((data) => {
-        setClothingItems(data);
-      })
-      .catch(console.error);
-  }, []);
-  
+
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
