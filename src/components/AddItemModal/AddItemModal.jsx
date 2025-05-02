@@ -5,7 +5,7 @@ import "./AddItemModal.css";
 function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
   const [name, setName] = useState("");
   const [weather, setWeather] = useState("");
-  const [image, setImage] = useState("");
+  const [imageUrl, setImage] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -21,7 +21,7 @@ function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItemModalSubmit({ name, image, weather });
+    onAddItemModalSubmit({ name, imageUrl, weather });
     setName("");
     setImage("");
     setWeather("");
@@ -57,7 +57,7 @@ function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
           placeholder="Image URL"
           required
           onChange={handleImageChange}
-          value={image}
+          value={imageUrl}
         />
       </label>
       <fieldset className="modal__radio">

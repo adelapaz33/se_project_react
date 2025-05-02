@@ -11,8 +11,15 @@
 }
 
 .modal__footer {
-  padding: 20px 0 32px 32px;
-  
+  padding: 20px 32px 32px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .modal__caption {

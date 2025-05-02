@@ -11,7 +11,7 @@ function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-function postItem() {
+function postItem({name, imageUrl, weather}) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {

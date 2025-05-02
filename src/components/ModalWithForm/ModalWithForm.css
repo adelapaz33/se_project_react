@@ -17,10 +17,10 @@
 .modal__content {
   background-color: white;
   position: relative;
-  /* padding: 28px 28px 36px; */
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
+  padding: 28px 28px 36px 28px;
   margin: auto;
   border-radius: 20px;
 }
