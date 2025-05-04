@@ -55,20 +55,6 @@ function App() {
     setSelectedCard(card);
   };
 
-  // const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-  //   postItem({ name, imageUrl, weather })
-  //     .then((addedItem) => {
-  //       setClothingItems((clothingItems) => [
-  //         { name, imageUrl, weather, ...addedItem }, // optional: you might just use addedItem
-  //         ...clothingItems,
-  //       ]);
-  //       closeActiveModal();
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
-
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     postItem({ name, imageUrl, weather })
       .then((addedItem) => {
