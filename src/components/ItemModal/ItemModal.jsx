@@ -21,7 +21,7 @@ function ItemModal({
             className="modal__close-btn"
           />
         </button>
-        <img src={card.imageUrl} alt="" className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <div className="modal__info">
             <h2 className="modal__caption">{card.name}</h2>

@@ -54,6 +54,7 @@ function App() {
     setActiveModal("preview");
     setSelectedCard(card);
   };
+  // const [isLoading, setIsLoading] = React.useState(false);
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     postItem({ name, imageUrl, weather })
@@ -103,7 +104,13 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  handleAddClick={handleAddClick}
+                  clothingItems={clothingItems}
+                />
+              }
             />
           </Routes>
           <Footer />
