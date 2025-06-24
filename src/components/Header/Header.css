@@ -29,6 +29,9 @@
   align-items: center;
   gap: 12px;
   line-height: 100%;
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
 }
 .header__username {
   margin: 0;
@@ -39,4 +42,11 @@
 .header__link {
   text-decoration: none;
   color: black;
+}
+
+.header__sign-up-btn {
+  border: none;
+}
+.header__log-in-btn {
+  border: none;
 }

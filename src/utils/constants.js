@@ -69,7 +69,7 @@ export const defaultWeatherOptions = {
     url: new URL("../assets/night/night_default.png", import.meta.url).href,
   },
 };
-
+// retry spread operator with data in setclothingItems
 export const defaultClothingItems = [
   {
     _id: 0,

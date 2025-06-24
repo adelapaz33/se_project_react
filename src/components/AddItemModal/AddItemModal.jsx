@@ -22,9 +22,7 @@ function AddItemModal({ handleCloseClick, isOpen, onAddItemModalSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItemModalSubmit({ name, imageUrl, weather });
-    // setName("");
-    // setImage("");
-    // setWeather("");
+    
   };
 
   return (
