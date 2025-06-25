@@ -1,8 +1,14 @@
 .sidebar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
+}
+.sidebar__user-data {
+  display: flex;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 .sidebar__avatar {
   height: 56px;
@@ -18,4 +24,13 @@
   border: none;
   font-size: 20px;
   line-height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+.sidebar__edit-btn {
+  border: none;
+  font-size: 20px;
+  line-height: 100%;
+  cursor: pointer;
+  background-color: transparent;
 }

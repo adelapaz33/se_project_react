@@ -2,7 +2,7 @@ import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
-function LoginModal({ isOpen, handleCloseClick, onLogin }) {
+function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,6 +25,15 @@ function LoginModal({ isOpen, handleCloseClick, onLogin }) {
       isOpen={isOpen}
       handleCloseClick={handleCloseClick}
       onLogin={handleSubmit}
+      footerContent={
+        <button
+          type="button"
+          className="modal__register-btn"
+          onClick={() => setActiveModal("registration")}
+        >
+          or Register
+        </button>
+      }
     >
       <label htmlFor="email" className="modal__label">
         Email{" "}
@@ -50,6 +59,7 @@ function LoginModal({ isOpen, handleCloseClick, onLogin }) {
           value={formData.password}
         />
       </label>
+      {/* <button className="modal__register-btn">or Register</button> */}
     </ModalWithForm>
   );
 }

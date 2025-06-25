@@ -7,6 +7,7 @@ function ModalWithForm({
   isOpen,
   handleCloseClick,
   onSubmit,
+  footerContent,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
@@ -25,9 +26,14 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} action="" className="modal__form">
           {children}
-          <button type="submit" className="modal__submit">
-            {buttonText}
-          </button>
+          <div className="modal__button-row">
+            <button type="submit" className="modal__submit">
+              {buttonText}
+            </button>
+            {footerContent && (
+              <div className="modal__footer">{footerContent}</div>
+            )}
+          </div>
         </form>
       </div>
     </div>

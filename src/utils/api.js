@@ -39,4 +39,18 @@ function deleteItem(id, token) {
     },
   });
 }
-export { getItems, postItem, deleteItem, checkResponse };
+
+function updateProfile({ name, avatar }, token) {
+  return request(`${baseUrl}/profile`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      name,
+      avatar,
+    }),
+  });
+}
+export { getItems, postItem, deleteItem, checkResponse, updateProfile };

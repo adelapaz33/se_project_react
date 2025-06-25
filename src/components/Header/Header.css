@@ -22,6 +22,7 @@
   background-color: transparent;
   font-size: 20px;
   line-height: 24px;
+  cursor: pointer;
 }
 
 .header__user-container {
@@ -46,7 +47,9 @@
 
 .header__sign-up-btn {
   border: none;
+  cursor: pointer;
 }
 .header__log-in-btn {
   border: none;
+  cursor: pointer;
 }

@@ -1,8 +1,32 @@
-# React + Vite
+# WTWR (What to Wear?): Front End Description
+This is a weather-based clothing recommendation app with user authentication, profile management, and the ability to add/like clothing items. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tehcnologies Used 
+- React
+- CSS Modules
+- API integration
+- React Router
+- Authentication 
+- State management (local state, Context API)
 
-Currently, two official plugins are available:
+# Key Features 
+- User authentication with registration and login validation  
+- Dynamic modal forms for various user actions  
+- Add, edit, and delete clothing items  
+- Custom weather-based API integration  
+- Form state handling with live validation  
+- Conditional rendering based on authentication status  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Challenges I Faced 
+One of the most challenging aspects of this project was implementing the sign-in and registration authentication flow. Managing user input, handling asynchronous requests to the backend, storing and validating JWT tokens, and conditionally rendering components based on the user's logged-in state required careful planning. I learned how to structure authentication logic cleanly and persist user sessions using localStorage. Debugging issues like 400 and 404 errors also helped me build stronger problem-solving skills and a deeper understanding of how frontend and backend systems communicate securely.
+
+## Development Stack Info
+
+This project uses [Vite](https://vitejs.dev/) for fast frontend development and HMR. It currently uses:
+
+- [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react): Uses Babel for fast refresh during development.
+
+Backend Deployment Link: https://adelapaz33.github.io/se_project_express/
+
+
+

@@ -7,6 +7,7 @@ function Profile({
   handleAddClick,
   clothingItems,
   handleSignOut,
+  handleEditClick,
 }) {
   // console.log(
   //   "Profile clothingItems:",
@@ -17,7 +18,7 @@ function Profile({
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar onSignOut={handleSignOut} />
+        <SideBar onSignOut={handleSignOut} handleEditClick={handleEditClick} />
       </section>
       <section className="profile__clothes-section">
         <ClothesSection

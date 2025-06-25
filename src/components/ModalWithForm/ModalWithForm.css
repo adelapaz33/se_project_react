@@ -93,3 +93,40 @@
 .modal__submit:hover {
   opacity: 0.6;
 }
+
+.modal__log-in-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.modal__register-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  list-style: 20px;
+  opacity: 50%;
+  cursor: pointer;
+  /* margin: 0;
+  padding: 0; */
+}
+.modal__register-btn:hover {
+  opacity: 1;
+}
+
+.modal__button-row {
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  align-items: flex-end;
+}
+.modal__footer {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  margin-bottom: 8px;
+}

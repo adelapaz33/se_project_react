@@ -3,7 +3,11 @@ import { useContext, useState, useEffect } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function EditProfileModal({ isOpen, handleCloseClick }) {
+function EditProfileModal({
+  isOpen,
+  handleCloseClick,
+  handleEditProfileSubmission,
+}) {
   const currentUser = useContext(CurrentUserContext);
   const [userData, setUserData] = useState({
     name: "",
@@ -28,7 +32,7 @@ function EditProfileModal({ isOpen, handleCloseClick }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(userData);
+    handleEditProfileSubmission(userData);
   };
 
   return (
@@ -59,7 +63,6 @@ function EditProfileModal({ isOpen, handleCloseClick }) {
           value={userData.avatar}
         />
       </label>
-      <button type="text">or Log In</button>
     </ModalWithForm>
   );
 }

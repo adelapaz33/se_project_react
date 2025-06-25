@@ -17,7 +17,7 @@ import {
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
-import { getItems, postItem, deleteItem } from "../../utils/api";
+import { getItems, postItem, deleteItem, updateProfile } from "../../utils/api";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -48,6 +48,9 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const handleEditClick = () => {
+    setActiveModal("edit-profile");
+  };
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -79,7 +82,8 @@ function App() {
     }
   }, []);
   const handleCardDelete = () => {
-    console.log("Selected card:", selectedCard);
+    // console.log("Selected card:", selectedCard);
+    // const token = localStorage.getItem("jwt");
     deleteItem(selectedCard._id)
       .then(() => {
         setClothingItems((cards) =>
@@ -95,7 +99,8 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    postItem({ name, imageUrl, weather })
+    const token = localStorage.getItem("jwt");
+    postItem({ name, imageUrl, weather }, token)
       .then((addedItem) => {
         setClothingItems((prevItems) => [addedItem, ...prevItems]);
         closeActiveModal();
@@ -124,6 +129,7 @@ function App() {
   const navigate = useNavigate();
   const handleRegistration = (formData) => {
     const { email, password, name, avatar } = formData;
+    console.log("signUp called with:", { name, avatar, email, password });
 
     auth
       .signUp(email, password, name, avatar)
@@ -136,6 +142,16 @@ function App() {
         setCurrentUser(res.user); // update state ???
         closeActiveModal();
         navigate("/profile");
+      })
+      .catch(console.error);
+  };
+
+  const handleEditProfileSubmission = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
+    updateProfile({ name, avatar }, token)
+      .then((res) => {
+        setCurrentUser(res.data);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -162,14 +178,13 @@ function App() {
   };
 
   const handleSignOut = () => {
+    console.log("logout button clicked");
     localStorage.removeItem("jwt");
-
     setIsLoggedIn(false);
     setCurrentUser(null);
+    navigate("/");
   };
 
-  //   Pass it as a prop to your Profile component
-  // Connect it to the "Sign out" button in your profile page
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/profile");
@@ -229,7 +244,8 @@ function App() {
                         onCardClick={handleCardClick}
                         handleAddClick={handleAddClick}
                         clothingItems={clothingItems}
-                        onSignOut={handleSignOut}
+                        handleSignOut={handleSignOut}
+                        handleEditClick={handleEditClick}
                       />
                     </ProtectedRoute>
                   }
@@ -258,16 +274,19 @@ function App() {
             isOpen={activeModal === "registration"}
             onRegister={handleRegistration}
             handleCloseClick={closeActiveModal}
+            setActiveModal={setActiveModal}
           />
           <LoginModal
             onLogin={handleLogin}
             isOpen={activeModal === "login"}
             handleCloseClick={closeActiveModal}
+            setActiveModal={setActiveModal}
           />
           <EditProfileModal
             handleCloseClick={closeActiveModal}
             isOpen={activeModal === "edit-profile"}
-            
+            handleEditProfileSubmission={handleEditProfileSubmission}
+            handleEditClick={handleEditClick}
           />
         </div>
       </CurrentUserContext.Provider>
