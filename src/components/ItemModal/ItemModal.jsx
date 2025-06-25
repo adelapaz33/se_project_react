@@ -9,7 +9,7 @@ function ItemModal({
   openConfirmationModal,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = card.owner === currentUser._id;
+  const isOwn = card.owner === currentUser?._id; // ._id is undefined?
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">

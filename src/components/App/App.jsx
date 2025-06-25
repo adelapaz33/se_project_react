@@ -188,8 +188,8 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log(data);
-        setClothingItems(...data);
+        // console.log(data);
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
@@ -267,6 +267,7 @@ function App() {
           <EditProfileModal
             handleCloseClick={closeActiveModal}
             isOpen={activeModal === "edit-profile"}
+            
           />
         </div>
       </CurrentUserContext.Provider>

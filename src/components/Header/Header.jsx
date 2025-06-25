@@ -1,6 +1,6 @@
 import "./Header.css";
 import logo from "../../assets/wtwr_logo.svg";
-import avatar from "../../assets/avatar_photo.png";
+// import avatar from "../../assets/avatar_photo.png";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ function Header({ handleAddClick, weatherData, onLoginClick, onSignupClick }) {
     if (currentUser.avatar) {
       return (
         <img
-          src={avatar}
+          src={currentUser.avatar}
           alt={`${currentUser.name} avatar`}
           className="header__avatar"
         />
