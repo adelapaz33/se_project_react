@@ -115,6 +115,7 @@ function App() {
         closeActiveModal();
         navigate("/profile"); // not going to /profile
         // fetch user data and set current state
+        //log at backend for login functionality update 
       })
       .catch((err) => {
         console.log("Login Failed:", err);
