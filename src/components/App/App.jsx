@@ -116,6 +116,7 @@ function App() {
         navigate("/profile"); // not going to /profile
         // fetch user data and set current state
         //log at backend for login functionality update 
+        // comment for github
       })
       .catch((err) => {
         console.log("Login Failed:", err);
