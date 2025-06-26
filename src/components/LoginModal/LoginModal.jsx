@@ -15,6 +15,7 @@ function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
     setFormData({ ...formData, password: e.target.value });
   };
   const handleSubmit = (e) => {
+    // console.log("handle submit:", formData);
     e.preventDefault();
     onLogin(formData);
   };
@@ -24,7 +25,7 @@ function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
       buttonText="Log In"
       isOpen={isOpen}
       handleCloseClick={handleCloseClick}
-      onLogin={handleSubmit}
+      onSubmit={handleSubmit}
       footerContent={
         <button
           type="button"

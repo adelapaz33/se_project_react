@@ -44,7 +44,11 @@
   text-decoration: none;
   color: black;
 }
-
+.header__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+}
 .header__sign-up-btn {
   border: none;
   cursor: pointer;

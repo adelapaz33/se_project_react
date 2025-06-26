@@ -7,13 +7,7 @@ import Footer from "../Footer/Footer";
 import { filterWeatherData, getWeather } from "../../utils/weatherAPI";
 import { coordinates, APIkey } from "../../utils/constants";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
-import {
-  Routes,
-  Route,
-  Navigate,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
@@ -61,7 +55,7 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
-    console.log(token);
+    // console.log(token);
 
     if (token) {
       checkToken(token)
@@ -109,9 +103,11 @@ function App() {
         console.error(error);
       });
   };
-  const handleLogin = ({ email, password }) => {
+  const handleLogin = (formData) => {
+    console.log(formData);
+    const { email, password } = formData;
     auth
-      .signIn({ email, password })
+      .signIn(email, password)
       .then((res) => {
         console.log(res);
         localStorage.setItem("jwt", res.token);
@@ -139,9 +135,10 @@ function App() {
       })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setCurrentUser(res.user); // update state ???
+        setCurrentUser(res.user);
+        setIsLoggedIn(true); // may need to delete this
         closeActiveModal();
-        navigate("/profile");
+        // navigate("/profile");
       })
       .catch(console.error);
   };
