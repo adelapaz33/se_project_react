@@ -104,7 +104,7 @@ function App() {
       });
   };
   const handleLogin = (formData) => {
-    console.log(formData);
+    // console.log(formData);
     const { email, password } = formData;
     auth
       .signIn(email, password)
@@ -113,10 +113,8 @@ function App() {
         localStorage.setItem("jwt", res.token);
         setIsLoggedIn(true);
         closeActiveModal();
-        navigate("/profile"); // not going to /profile
-        // fetch user data and set current state
-        //log at backend for login functionality update 
-        // comment for github -------
+        navigate("/profile");
+        setCurrentUser(res.user); // could also use userData ?
       })
       .catch((err) => {
         console.log("Login Failed:", err);

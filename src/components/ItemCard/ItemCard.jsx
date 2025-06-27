@@ -34,6 +34,7 @@ function ItemCard({ item, onCardLike, onCardClick }) {
         <button
           className={itemLikeButtonClassName}
           onClick={handleLike}
+          // need to add heard image here 
         ></button>
       )}
     </li>
