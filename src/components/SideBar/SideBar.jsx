@@ -9,7 +9,7 @@ function SideBar({ onSignOut, handleEditClick }) {
       <div className="sidebar__user-data">
         <img
           className="sidebar__avatar"
-          src={currentUser.avatar}
+          src={currentUser.avatar || ""}
           alt="Avatar Photo"
         />
         <p className="sidebar__username">{currentUser.name}</p>
