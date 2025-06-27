@@ -20,3 +20,27 @@
   width: 100%;
   border-radius: 8px;
 }
+
+.card__like-button {
+  background: url(../../assets/heart-unliked.svg) no-repeat center;
+  background-size: contain;
+  border: none;
+  width: 18px;
+  height: 15px;
+  position: absolute;
+  right: 111px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.card__like-button_liked {
+  cursor: pointer;
+  background: url(../../assets/heart-liked.svg) no-repeat center;
+  background-size: contain;
+  border: none;
+  width: 18px;
+  height: 15px;
+  position: absolute;
+  right: 111px;
+  top: 20px;
+}

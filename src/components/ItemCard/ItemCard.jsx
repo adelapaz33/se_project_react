@@ -6,9 +6,9 @@ function ItemCard({ item, onCardLike, onCardClick }) {
   const currentUser = useContext(CurrentUserContext);
   // const isLiked = item.likes.some((id) => id === currentUser._id);
   const isLiked =
-  Array.isArray(item.likes) && currentUser?._id
-    ? item.likes.some((id) => id === currentUser._id)
-    : false;
+    Array.isArray(item.likes) && currentUser?._id
+      ? item.likes.some((id) => id === currentUser._id)
+      : false;
   const itemLikeButtonClassName = `card__like-button ${
     isLiked ? "card__like-button_liked" : ""
   }`;
@@ -18,6 +18,7 @@ function ItemCard({ item, onCardLike, onCardClick }) {
   };
 
   const handleLike = () => {
+    console.log("Clicked like for:", item._id);
     onCardLike(item);
   };
 
@@ -34,7 +35,6 @@ function ItemCard({ item, onCardLike, onCardClick }) {
         <button
           className={itemLikeButtonClassName}
           onClick={handleLike}
-          // need to add heard image here 
         ></button>
       )}
     </li>
