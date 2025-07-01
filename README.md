@@ -1,8 +1,6 @@
 # WTWR (What to Wear?): Front End Description
 This is a weather-based clothing recommendation app with user authentication, profile management, and the ability to add/like clothing items. 
 
-Backend Deployment Link: https://adelapaz33.github.io/se_project_express/
-
 # Tehcnologies Used 
 - React
 - CSS Modules
@@ -27,6 +25,8 @@ One of the most challenging aspects of this project was implementing the sign-in
 This project uses [Vite](https://vitejs.dev/) for fast frontend development and HMR. It currently uses:
 
 - [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react): Uses Babel for fast refresh during development.
+
+Backend Deployment Link: https://github.com/adelapaz33/se_project_express/
 
 
 
