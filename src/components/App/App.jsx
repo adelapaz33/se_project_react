@@ -11,7 +11,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { defaultClothingItems } from "../../utils/constants";
-import { getItems, postItem, deleteItem, updateProfile } from "../../utils/api";
+import {
+  getItems,
+  postItem,
+  deleteItem,
+  updateProfile,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -55,7 +62,6 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
-    // console.log(token);
 
     if (token) {
       checkToken(token)
@@ -77,8 +83,8 @@ function App() {
   }, []);
   const handleCardDelete = () => {
     // console.log("Selected card:", selectedCard);
-    // const token = localStorage.getItem("jwt");
-    deleteItem(selectedCard._id)
+    const token = localStorage.getItem("jwt");
+    deleteItem(selectedCard._id, token)
       .then(() => {
         setClothingItems((cards) =>
           cards.filter((card) => card._id !== selectedCard._id)
@@ -147,31 +153,49 @@ function App() {
     const token = localStorage.getItem("jwt");
     updateProfile({ name, avatar }, token)
       .then((res) => {
-        setCurrentUser(res.data);
+        console.log("Update profile response:", res);
+        setCurrentUser(res);
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to update profile:", error);
+      });
   };
+  // const handleCardLike = ({ id, isLiked }) => {
+  //   console.log("handleCardLike called with", { id, isLiked });
+  //   const token = localStorage.getItem("jwt");
+
+  //   !isLiked
+  //     ? api
+  //         .addCardLike(id, token)
+  //         .then((updatedCard) => {
+  //           setClothingItems((cards) =>
+  //             cards.map((item) => (item._id === id ? updatedCard : item))
+  //           );
+  //         })
+  //         .catch((err) => console.log(err))
+  //     : api
+  //         .removeCardLike(id, token)
+  //         .then((updatedCard) => {
+  //           setClothingItems((cards) =>
+  //             cards.map((item) => (item._id === id ? updateCard : item))
+  //           );
+  //         })
+  //         .catch((err) => console.log(err));
+  // };
+
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
 
-    !isLiked
-      ? api
-          .addCardLike(id, token)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
-            );
-          })
-          .catch((err) => console.log(err))
-      : api
-          .removeCardLike(id, token)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updateCard : item))
-            );
-          })
-          .catch((err) => console.log(err));
+    const request = !isLiked ? addCardLike : removeCardLike;
+
+    request(id, token)
+      .then((updatedCard) => {
+        setClothingItems((cards) =>
+          cards.map((item) => (item._id === id ? updatedCard : item))
+        );
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSignOut = () => {
@@ -243,6 +267,7 @@ function App() {
                         clothingItems={clothingItems}
                         handleSignOut={handleSignOut}
                         handleEditClick={handleEditClick}
+                        onCardLike={handleCardLike}
                       />
                     </ProtectedRoute>
                   }

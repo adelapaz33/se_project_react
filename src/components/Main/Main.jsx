@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 function Main({ weatherData, onCardClick, clothingItems, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-
+  console.log("Main props:", { onCardLike });
   return (
     <main>
       <WeatherCard weatherData={weatherData} />

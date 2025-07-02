@@ -19,7 +19,7 @@ function ItemCard({ item, onCardLike, onCardClick }) {
 
   const handleLike = () => {
     console.log("Clicked like for:", item._id);
-    onCardLike(item);
+    onCardLike({ id: item._id, isLiked }); // ✅ correct props
   };
 
   return (

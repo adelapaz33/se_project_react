@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
 }
+
+
 .card__name {
   margin: 0;
   position: absolute;
@@ -17,8 +19,10 @@
   padding: 2px 12px 2px 12px;
 }
 .card__image {
-  width: 100%;
+  aspect-ratio: 14/16;
+  overflow: hidden;
   border-radius: 8px;
+  /* object-fit: cover; */
 }
 
 .card__like-button {
