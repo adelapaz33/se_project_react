@@ -42,7 +42,8 @@ function deleteItem(id, token) {
 
 function updateProfile({ name, avatar }, token) {
   return request(`${baseUrl}/profile`, {
-    method: "PUT",
+    // backend is /me
+    method: "PUT", // backend is PATCH
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,

@@ -308,7 +308,7 @@ function App() {
             handleCloseClick={closeActiveModal}
             isOpen={activeModal === "edit-profile"}
             handleEditProfileSubmission={handleEditProfileSubmission}
-            handleEditClick={handleEditClick}
+            // handleEditClick={handleEditClick}
           />
         </div>
       </CurrentUserContext.Provider>
