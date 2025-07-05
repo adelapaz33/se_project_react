@@ -117,10 +117,14 @@ function App() {
       .then((res) => {
         console.log(res);
         localStorage.setItem("jwt", res.token);
+
+        return checkToken(res.token);
+      })
+      .then((userData) => {
+        setCurrentUser(userData);
         setIsLoggedIn(true);
         closeActiveModal();
         navigate("/profile");
-        setCurrentUser(res.user); // could also use userData ?
       })
       .catch((err) => {
         console.log("Login Failed:", err);

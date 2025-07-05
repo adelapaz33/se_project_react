@@ -7,7 +7,7 @@ function EditProfileModal({
   isOpen,
   handleCloseClick,
   handleEditProfileSubmission,
-  handleEditClick,
+  // handleEditClick,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const [userData, setUserData] = useState({
@@ -42,7 +42,7 @@ function EditProfileModal({
       buttonText="Save Changes"
       isOpen={isOpen}
       handleCloseClick={handleCloseClick}
-      handleEditClick={handleSubmit} // change to onSubmit?
+     onSubmit={handleSubmit} // change to onSubmit?
     >
       <label htmlFor="name" className="modal__label">
         Name*{" "}
