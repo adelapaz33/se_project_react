@@ -9,10 +9,7 @@ export const signUp = (email, password, name, avatar) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password, name, avatar }),
-  }).then((res) => {
-    // return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-    checkResponse();
-  });
+  }).then(checkResponse);
 };
 
 export const signIn = (email, password) => {
@@ -24,10 +21,7 @@ export const signIn = (email, password) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((res) => {
-    // return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-    checkResponse();
-  });
+  }).then(checkResponse);
 };
 
 export const checkToken = (token) => {
@@ -37,10 +31,11 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
+  // ((res) => {
+  //   if (res.ok) {
+  //     return res.json();
+  //   }
+  //   return Promise.reject(`Error: ${res.status}`);
+  // });
 };
