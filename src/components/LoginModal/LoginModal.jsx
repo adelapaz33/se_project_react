@@ -7,6 +7,7 @@ function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
     email: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   const handleEmail = (e) => {
     setFormData({ ...formData, email: e.target.value });
   };
@@ -15,9 +16,11 @@ function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
     setFormData({ ...formData, password: e.target.value });
   };
   const handleSubmit = (e) => {
-    // console.log("handle submit:", formData);
     e.preventDefault();
-    onLogin(formData);
+    setErrorMessage("");
+    onLogin(formData).catch((err) => {
+      setErrorMessage("Invalid email or password.");
+    });
   };
   return (
     <ModalWithForm
@@ -60,7 +63,7 @@ function LoginModal({ isOpen, handleCloseClick, onLogin, setActiveModal }) {
           value={formData.password}
         />
       </label>
-      {/* <button className="modal__register-btn">or Register</button> */}
+      {errorMessage && <p className="modal__error">{errorMessage}</p>}
     </ModalWithForm>
   );
 }

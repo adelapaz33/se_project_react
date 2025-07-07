@@ -1,5 +1,6 @@
 // contains functions to make requests to backend's authentication endpoints
 const baseUrl = "http://localhost:3001";
+import { checkResponse } from "./api";
 
 export const signUp = (email, password, name, avatar) => {
   return fetch(`${baseUrl}/signup`, {
@@ -9,7 +10,8 @@ export const signUp = (email, password, name, avatar) => {
     },
     body: JSON.stringify({ email, password, name, avatar }),
   }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    // return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    checkResponse();
   });
 };
 
@@ -23,7 +25,8 @@ export const signIn = (email, password) => {
     },
     body: JSON.stringify({ email, password }),
   }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    // return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+    checkResponse();
   });
 };
 

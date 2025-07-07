@@ -112,23 +112,21 @@ function App() {
   const handleLogin = (formData) => {
     // console.log(formData);
     const { email, password } = formData;
-    auth
+    return auth
       .signIn(email, password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         localStorage.setItem("jwt", res.token);
-
         return checkToken(res.token);
       })
       .then((userData) => {
         setCurrentUser(userData);
         setIsLoggedIn(true);
+        // navigate("/profile");
         closeActiveModal();
-        navigate("/profile");
       })
       .catch((err) => {
-        console.log("Login Failed:", err);
-        //handle login error
+        return Promise.reject(err);
       });
   };
 

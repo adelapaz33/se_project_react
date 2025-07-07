@@ -51,48 +51,48 @@ function RegisterModal({
         </button>
       }
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="emailRegister" className="modal__label">
         Email*{" "}
         <input
           type="email"
           className="modal__input"
-          id="email"
+          id="emailRegister"
           placeholder="Email"
           required
           onChange={handleEmail}
           value={formData.email}
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="passwordRegister" className="modal__label">
         Password*{" "}
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="passwordRegister"
           placeholder="Password"
           required
           onChange={handlePassword}
           value={formData.password}
         />
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="nameRegister" className="modal__label">
         Name*{" "}
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="nameRegister"
           placeholder="Name"
           required
           onChange={handleNameChange}
           value={formData.name}
         />
       </label>
-      <label htmlFor="avatarURL" className="modal__label">
+      <label htmlFor="avatarURLRegister" className="modal__label">
         Avatar URL*{" "}
         <input
           type="url"
           className="modal__input"
-          id="avatarURL"
+          id="avatarURLRegister"
           placeholder="Avatar URL"
           required
           onChange={handleImageChange}

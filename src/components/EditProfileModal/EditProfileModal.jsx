@@ -42,24 +42,24 @@ function EditProfileModal({
       buttonText="Save Changes"
       isOpen={isOpen}
       handleCloseClick={handleCloseClick}
-     onSubmit={handleSubmit} // change to onSubmit?
+      onSubmit={handleSubmit} // change to onSubmit?
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="nameEdit" className="modal__label">
         Name*{" "}
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="nameEdit"
           onChange={handleNameChange}
           value={userData.name}
         />
       </label>
-      <label htmlFor="avatarURL" className="modal__label">
+      <label htmlFor="" className="modal__label">
         Avatar URL{" "}
         <input
           type="url"
           className="modal__input"
-          id="avatarURL"
+          id="avatarURLEdit"
           onChange={handleImageChange}
           value={userData.avatar}
         />

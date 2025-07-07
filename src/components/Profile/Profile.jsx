@@ -10,12 +10,6 @@ function Profile({
   handleEditClick,
   onCardLike,
 }) {
-  // console.log(
-  //   "Profile clothingItems:",
-  //   clothingItems,
-  //   "Type:",
-  //   typeof clothingItems
-  // );
   return (
     <div className="profile">
       <section className="profile__sidebar">
