@@ -1,5 +1,5 @@
 // contains functions to make requests to backend's authentication endpoints
-const baseUrl = "http://localhost:3001";
+import { baseUrl } from "./constants";
 import { checkResponse } from "./api";
 
 export const signUp = (email, password, name, avatar) => {
