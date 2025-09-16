@@ -26,6 +26,13 @@ One of the most challenging aspects of this project was implementing the sign-in
 
 Through this process, I learned how to structure authentication logic cleanly, persist user sessions using localStorage, and debug common errors like 400 and 404 status codes. These challenges helped strengthen my problem-solving skills and gave me a deeper understanding of secure frontend-backend communication.
 
+## Screenshots
+
+The implementation of the weather API, with option to toggle between F and C. 
+![WeatherAPI](./src/assets/WeatherAPI.png) 
+
+Example of validation 
+![Validation Image](./src/assets/Validation.png)
 ## Development Stack Info
 
 This project uses [Vite](https://vitejs.dev/) for fast frontend development and hot module replacement (HMR). It also includes:
