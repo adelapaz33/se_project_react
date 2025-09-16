@@ -25,7 +25,8 @@ This is a weather-based clothing recommendation app featuring user authenticatio
 One of the most challenging aspects of this project was implementing the sign-in and registration authentication flow. Managing user input, handling asynchronous requests to the backend, storing and validating JWT tokens, and conditionally rendering components based on the user's logged-in state required careful planning.
 
 Through this process, I learned how to structure authentication logic cleanly, persist user sessions using localStorage, and debug common errors like 400 and 404 status codes. These challenges helped strengthen my problem-solving skills and gave me a deeper understanding of secure frontend-backend communication.
-
+## Improvements for the future 
+To build upon this website, users can make their profiles public or private. For public profiles, users can follow each others closets and get inspiration for clothing items. Clothing brands could take advantage of this and link their clothes, so users could go straight to the brands website and buy a clothing item they are interested in.
 ## Screenshots
 
 The implementation of the weather API, with option to toggle between F and C. 
