@@ -110,19 +110,16 @@ function App() {
       });
   };
   const handleLogin = (formData) => {
-    // console.log(formData);
     const { email, password } = formData;
     return auth
       .signIn(email, password)
       .then((res) => {
-        // console.log(res);
         localStorage.setItem("jwt", res.token);
         return checkToken(res.token);
       })
       .then((userData) => {
         setCurrentUser(userData);
         setIsLoggedIn(true);
-        // navigate("/profile");
         closeActiveModal();
       })
       .catch((err) => {
@@ -163,28 +160,6 @@ function App() {
         console.error("Failed to update profile:", error);
       });
   };
-  // const handleCardLike = ({ id, isLiked }) => {
-  //   console.log("handleCardLike called with", { id, isLiked });
-  //   const token = localStorage.getItem("jwt");
-
-  //   !isLiked
-  //     ? api
-  //         .addCardLike(id, token)
-  //         .then((updatedCard) => {
-  //           setClothingItems((cards) =>
-  //             cards.map((item) => (item._id === id ? updatedCard : item))
-  //           );
-  //         })
-  //         .catch((err) => console.log(err))
-  //     : api
-  //         .removeCardLike(id, token)
-  //         .then((updatedCard) => {
-  //           setClothingItems((cards) =>
-  //             cards.map((item) => (item._id === id ? updateCard : item))
-  //           );
-  //         })
-  //         .catch((err) => console.log(err));
-  // };
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
@@ -226,7 +201,6 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        // console.log(data);
         setClothingItems(data);
       })
       .catch(console.error);
