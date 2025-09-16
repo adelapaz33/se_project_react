@@ -43,4 +43,4 @@ This project uses [Vite](https://vitejs.dev/) for fast frontend development and 
 
 ## Demo Link
 
-![Demo Link](https://youtu.be/eGQR6fo5mP8?si=lz8z-w8bTv15gDT5)
+[Demo Link](https://youtu.be/eGQR6fo5mP8?si=lz8z-w8bTv15gDT5)
